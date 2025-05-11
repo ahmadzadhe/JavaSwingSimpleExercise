@@ -2,6 +2,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Random;
 
 public class E1 extends JFrame implements ActionListener {
     int a=25;
@@ -11,6 +12,7 @@ public class E1 extends JFrame implements ActionListener {
     JLabel label;
     JLabel imageLabel;
     ImageIcon imageMe;
+    Random rand = new Random();
     E1(){
         setTitle("Ahmad");
         setResizable(false);
@@ -18,6 +20,9 @@ public class E1 extends JFrame implements ActionListener {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         label=new JLabel("Clicks : 0");
+        label.setFont(new Font("Arial",Font.PLAIN,30));
+        label.setHorizontalAlignment(SwingConstants.CENTER);
+        label.setVerticalAlignment(SwingConstants.CENTER);
         button=new JButton("Click bro");
         ImageIcon imageBig= new ImageIcon("Screenshot 2025-05-07 203054.png");
         imageMe= new ImageIcon("5825785127849020150.jpg");
@@ -38,6 +43,7 @@ public class E1 extends JFrame implements ActionListener {
         b+=25;
         sumClicks++;
         label.setText("Click: "+ sumClicks);
+        label.setForeground(new Color(rand.nextInt(255),rand.nextInt(255),rand.nextInt(250)));
         if(sumClicks%20==0||sumClicks%20==19){
             if(sumClicks%20==0){
                 ImageIcon imageNextKiss=new ImageIcon("5825785127849020363.jpg");
